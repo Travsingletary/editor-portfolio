@@ -1,6 +1,9 @@
 node_modules/
 dist/
-.vercel
-.a0proj/
-*.env
-*.env.local
+.vercel/
+venv/
+.env
+.env.local
+.DS_Store
+*.log
+pnpm-lock.yaml
