@@ -177,6 +177,18 @@ const App = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">About</h2>
           <div className="w-16 h-1 bg-amber-400 mx-auto mb-16 rounded-full"></div>
           <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Headshot */}
+            <div className="flex justify-center md:justify-start">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl bg-amber-400/10 translate-x-3 translate-y-3"></div>
+                <img
+                  src="/assets/images/profile.jpeg"
+                  alt="Trav Singletary"
+                  className="relative w-72 md:w-80 rounded-2xl object-cover shadow-2xl border border-slate-700/50"
+                />
+              </div>
+            </div>
+            {/* Text */}
             <div>
               <p className="text-slate-300 leading-relaxed mb-6 text-lg">
                 I'm a senior editor and post-production specialist who happens to write code.
@@ -191,19 +203,20 @@ const App = () => {
                 Based in the US · Available for editorial, post-production, and production pipeline consulting.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { value: '10K+', label: 'Viewers on platforms I built' },
-                { value: '100+', label: 'Episodes cut & shipped' },
-                { value: '8+', label: 'Delivery platforms automated' },
-                { value: '0', label: 'Compromises on picture quality' },
-              ].map(stat => (
-                <div key={stat.label} className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 text-center">
-                  <div className="text-3xl font-bold text-amber-400 mb-2">{stat.value}</div>
-                  <div className="text-slate-400 text-sm leading-snug">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+          </div>
+          {/* Stats row below */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+            {[
+              { value: '10K+', label: 'Viewers on platforms I built' },
+              { value: '100+', label: 'Episodes cut & shipped' },
+              { value: '8+', label: 'Delivery platforms automated' },
+              { value: '0', label: 'Compromises on picture quality' },
+            ].map(stat => (
+              <div key={stat.label} className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-amber-400 mb-2">{stat.value}</div>
+                <div className="text-slate-400 text-sm leading-snug">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
