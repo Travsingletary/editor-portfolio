@@ -1,22 +1,678 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Travis Singletary - Media Technologist, AI-Assisted Content Automation, Streaming Infrastructure Expert" />
-    <meta name="keywords" content="portfolio, media, technology, AI, streaming, content automation" />
-    <meta name="author" content="Travis Singletary" />
-    <meta property="og:title" content="Travis Singletary - Media Technologist & AI Expert" />
-    <meta property="og:description" content="Bridging traditional media expertise with cutting-edge AI and streaming technology" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Travis Singletary - Media Technologist" />
-    <meta name="twitter:description" content="AI-Assisted Content Automation & Streaming Infrastructure" />
-    <title>Travis Singletary - Media Technologist & AI Expert</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travis Singletary — Senior Video Editor</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Travis Singletary is a senior video editor with 15+ years in network television, streaming, and branded content. Remote-friendly. Available immediately." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Travis Singletary — Senior Video Editor" />
+  <meta property="og:description" content="15+ years cutting network television, streaming, and branded content. Story-first pacing and broadcast-level finishing. Remote. Available immediately." />
+  <meta property="og:url" content="https://editorportfolio-murex.vercel.app/" />
+  <meta property="og:image" content="https://editorportfolio-murex.vercel.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Travis Singletary — Senior Video Editor" />
+  <meta name="twitter:description" content="Network + streaming + branded. Remote. Available immediately." />
+  <meta name="twitter:image" content="https://editorportfolio-murex.vercel.app/og-image.jpg" />
+
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #fafaf8;
+      --off: #f2f0eb;
+      --mid: #c8c4bc;
+      --dark: #1a1a18;
+      --ink: #2e2e2a;
+      --accent: #b8955a;
+      --accent-light: #d4ae7a;
+      --mono: 'DM Mono', monospace;
+      --serif: 'Cormorant Garamond', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 3rem 4rem;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif);
+      font-size: clamp(8rem, 20vw, 22rem);
+      font-weight: 300;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.06);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-meta { text-align: right; }
+
+    .hero-tagline {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--ink);
+      opacity: 0.65;
+      max-width: 360px;
+      margin-left: auto;
+      line-height: 1.7;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      animation: fadeUp 2s ease 1s both;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--ink);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(1); opacity: 0.35; }
+      50% { transform: scaleY(0.3); opacity: 0.1; }
+    }
+
+    /* ── REEL ── */
+    .reel-section {
+      padding: 6rem 3rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.2;
+      max-width: 60px;
+    }
+
+    .reel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+    }
+
+    .reel-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      border: none;
+    }
+
+    .reel-caption {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.5;
+    }
+
+    .reel-caption span {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── NETWORKS ── */
+    .networks-section {
+      padding: 5rem 3rem;
+      background: var(--off);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .networks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      align-items: center;
+    }
+
+    .network-badge {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 2px;
+      background: white;
+      color: var(--ink);
+      transition: all 0.2s;
+    }
+
+    .network-badge:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .network-badge.featured {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .about-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      color: var(--ink);
+      opacity: 0.75;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      padding: 5rem 3rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .skill-group h4 {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .skill-group ul { list-style: none; }
+
+    .skill-group ul li {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: opacity 0.2s;
+    }
+
+    .skill-group ul li:hover { opacity: 1; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 7rem 3rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .contact-sub {
+      font-size: 0.9rem;
+      opacity: 0.55;
+      margin-bottom: 2.5rem;
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-light);
+      padding-bottom: 0.2rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-email:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .contact-rate {
+      margin-top: 2rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.35;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--off);
+    }
+
+    footer span {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      opacity: 0.35;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { padding: 0 1.5rem 3rem; }
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-meta { text-align: left; }
+      .hero-desc { margin-left: 0; }
+      .reel-section, .networks-section, .skills-section, .contact-section { padding: 4rem 1.5rem; }
+      .about-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      .stat-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Travis Singletary</a>
+    <ul class="nav-links">
+      <li><a href="#reel">Reel</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-text">Edit</div>
+    <div class="hero-content">
+      <div class="hero-title">
+        Senior video editor.<br>
+        <em>Broadcast storytelling.</em><br>
+        Built for brands.
+      </div>
+      <div class="hero-meta">
+        <p class="hero-tagline">Remote · Senior Video Editor</p>
+        <p class="hero-desc">
+          15+ years cutting network and streaming. Documentary, unscripted, and branded work with story-first pacing and broadcast-level finishing.
+        </p>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#reel" aria-label="Scroll to demo reel">
+      <span>Watch Reel</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <section class="reel-section" id="reel">
+    <p class="section-label">Demo Reel</p>
+    <div class="reel-wrapper fade-in">
+      <iframe
+        src="https://player.vimeo.com/video/showcase/11098616?autoplay=0&title=0&byline=0&portrait=0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Travis Singletary — Demo Reel"
+      ></iframe>
+    </div>
+    <div class="reel-caption fade-in">
+      <span>Selected work — 2010–2024</span>
+      <span>TV · Streaming · Branded</span>
+    </div>
+  </section>
+
+  <section class="networks-section" id="credits">
+    <p class="section-label" style="color:var(--ink)">Network Credits</p>
+    <div class="networks-grid fade-in">
+      <div class="network-badge featured">A&amp;E</div>
+      <div class="network-badge featured">OWN</div>
+      <div class="network-badge featured">BET</div>
+      <div class="network-badge">TV One</div>
+      <div class="network-badge">Revolt TV</div>
+      <div class="network-badge">Discovery+</div>
+      <div class="network-badge">Unscripted</div>
+      <div class="network-badge">Documentary</div>
+      <div class="network-badge">Branded Content</div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div>
+      <p class="section-label">About</p>
+      <h2 class="about-heading">
+        The edit is where<br>
+        stories <em>become</em><br>
+        what they were<br>
+        meant to be.
+      </h2>
+      <div class="stat-row fade-in">
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Major Networks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100s</div>
+          <div class="stat-label">Hours Aired</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-body fade-in">
+      <p>
+        I'm a senior video editor with 15+ years in television and streaming, cutting documentary, unscripted, and branded content for major networks.
+      </p>
+      <p>
+        I shape raw footage into clear, compelling stories — building structure, tightening pacing, and landing emotion from assembly to final delivery.
+      </p>
+      <p>
+        Based in Los Angeles. Available immediately for remote engagements (long-form, series, specials, or branded campaigns).
+      </p>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <p class="section-label" style="color:rgba(255,255,255,0.45)">Tools &amp; Platforms</p>
+    <div class="skills-grid">
+      <div class="skill-group fade-in">
+        <h4>Editing</h4>
+        <ul>
+          <li>Avid Media Composer</li>
+          <li>Adobe Premiere Pro</li>
+          <li>DaVinci Resolve</li>
+          <li>Final Cut Pro</li>
+        </ul>
+      </div>
+      <div class="skill-group fade-in">
+        <h4>Motion &amp; VFX</h4>
+        <ul>
+          <li>After Effects</li>
+          <li>Motion Graphics</li>
+          <li>Color Correction</li>
+          <li>Audio Mixing</li>
+        </ul>
+      </div>
+      <div class="skill-group fade-in">
+        <h4>Specialties</h4>
+        <ul>
+          <li>Documentary</li>
+          <li>Unscripted Reality</li>
+          <li>Branded Content</li>
+          <li>Series &amp; Specials</li>
+        </ul>
+      </div>
+      <div class="skill-group fade-in">
+        <h4>Delivery</h4>
+        <ul>
+          <li>Broadcast Standards</li>
+          <li>Streaming Specs</li>
+          <li>Remote Collaboration</li>
+          <li>Frame.io / LucidLink</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="networks-section" id="services">
+    <p class="section-label" style="color:var(--ink)">Services</p>
+    <div class="networks-grid fade-in">
+      <div class="network-badge">Senior Editing</div>
+      <div class="network-badge">Story Producing</div>
+      <div class="network-badge">Doc &amp; Unscripted</div>
+      <div class="network-badge">Branded Campaigns</div>
+      <div class="network-badge">Sound + Pacing</div>
+      <div class="network-badge">Network Deliverables</div>
+      <div class="network-badge">Remote Workflow</div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2 class="contact-heading fade-in">Let's make<br>something real.</h2>
+    <p class="contact-sub fade-in">Available for remote freelance and contract engagements</p>
+    <a href="mailto:trav.singletary@gmail.com" class="contact-email fade-in">trav.singletary@gmail.com</a>
+    <p class="contact-rate fade-in">Remote · Available immediately · Day rate available on request</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Travis Singletary</span>
+    <span>Senior Video Editor — Remote</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
 </html>
