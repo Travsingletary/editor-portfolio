@@ -90,7 +90,7 @@ const App = () => {
     'Pipeline & Operations': ['Workflow automation', 'CI/CD for media', 'API integration', 'Task scheduling', 'Client delivery systems'],
   };
 
-  const navLinks = ['home', 'about', 'projects', 'skills', 'contact'];
+  const navLinks = ['home', 'reel', 'about', 'projects', 'skills', 'contact'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
@@ -168,6 +168,25 @@ const App = () => {
           <div className="mt-16 animate-bounce">
             <ChevronDown className="mx-auto text-slate-600" size={24} />
           </div>
+        </div>
+      </section>
+
+      {/* Demo Reel */}
+      <section id="reel" className="py-24 px-6 bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Demo Reel</h2>
+          <div className="w-16 h-1 bg-amber-400 mx-auto mb-16 rounded-full"></div>
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              src="https://player.vimeo.com/video/512797685?autoplay=0&title=0&byline=0&portrait=0"
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Travis Singletary Demo Reel"
+            />
+          </div>
+          <p className="text-slate-500 text-center mt-6 text-sm">Editor · Colorist · Post-Production Specialist</p>
         </div>
       </section>
 
