@@ -1,118 +1,1525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travis Singletary - Digital Creator & Professional Editor</title>
-    <style>
-        body {
-            font-family: Georgia, Garamond, serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #1e1e1e;
-            padding: 10px 0;
-            text-align: center;
-            border-bottom: 2px solid #D4AF37;
-        }
-        h1 {
-            color: #D4AF37;
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-        h2 {
-            font-size: 2em;
-            border-bottom: 1px solid #D4AF37;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        video {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            display: block;
-        }
-        .about, .case-studies, .skills, .contact {
-            margin-top: 30px;
-        }
-        .network-credits img {
-            height: 40px;
-            margin: 0 10px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #1e1e1e;
-            border-top: 2px solid #D4AF37;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 10px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .network-credits img {
-                height: 30px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travis Singletary — Senior Video Editor & Post-Production Specialist</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Travis Singletary — Senior video editor with 15+ years in network television, streaming, and branded content. Narrative editing, color, sound, and AI-assisted production pipelines. Remote-friendly." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Travis Singletary — Senior Video Editor" />
+  <meta property="og:description" content="15+ years cutting network television, streaming, and branded content. Story-first pacing and broadcast-level finishing." />
+  <meta property="og:url" content="https://editorportfolio-murex.vercel.app/" />
+  <meta property="og:image" content="https://editorportfolio-murex.vercel.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Travis Singletary — Senior Video Editor" />
+  <meta name="twitter:description" content="Network + streaming + branded. Remote. Available immediately." />
+  <meta name="twitter:image" content="https://editorportfolio-murex.vercel.app/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:  #fafaf8;
+      --off:    #f2f0eb;
+      --mid:    #c8c4bc;
+      --dark:   #1a1a18;
+      --ink:    #2e2e2a;
+      --accent: #b8955a;
+      --accent-light: #d4ae7a;
+      --mono:   'DM Mono', monospace;
+      --serif:  'Cormorant Garamond', serif;
+      --sans:   'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: rgba(184,149,90,.18); color: var(--ink); }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--off); }
+    ::-webkit-scrollbar-thumb { background: var(--mid); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 0.9rem 3rem;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      z-index: 150;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 300;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .mobile-menu a:hover { opacity: 1; color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 3rem 4rem;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif);
+      font-size: clamp(8rem, 20vw, 22rem);
+      font-weight: 300;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.05);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.02em;
+      animation: heroTextDrift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroTextDrift {
+      from { transform: translate(-51%, -50%); }
+      to   { transform: translate(-49%, -50%); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 2rem;
+      animation: heroFadeIn 1s ease 0.2s both;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em { font-style: italic; color: var(--accent); }
+
+    .hero-meta { text-align: right; }
+
+    .hero-tagline {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--ink);
+      opacity: 0.6;
+      max-width: 360px;
+      margin-left: auto;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.55rem 1.3rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--ink); color: var(--white); }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline { background: transparent; color: var(--ink); border: 1px solid rgba(0,0,0,0.25); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      animation: fadeUp 2s ease 1.2s both;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 44px;
+      background: var(--ink);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.2); opacity: 0.2; }
+    }
+
+    /* ── SECTION BASICS ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.2;
+      max-width: 60px;
+    }
+
+    /* ── REEL ── */
+    .reel-section {
+      padding: 6rem 3rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .reel-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    .reel-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      border: none;
+    }
+
+    .reel-caption {
+      max-width: 1100px;
+      margin: 1.75rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.4;
+    }
+
+    .reel-caption span {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    /* ── SELECTED WORK ── */
+    .work-section {
+      padding: 7rem 3rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .work-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .work-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 3.5rem;
+      line-height: 1.1;
+    }
+
+    .show-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .show-card {
+      background: #222220;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+
+    .show-card:hover { border-color: rgba(184,149,90,0.25); }
+
+    .show-video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #111;
+    }
+
+    .show-video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .show-meta {
+      padding: 1.75rem 2rem 2rem;
+    }
+
+    .show-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .show-network {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(184,149,90,0.12);
+      border: 1px solid rgba(184,149,90,0.2);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    .show-network.own {
+      color: #8ecae6;
+      background: rgba(142,202,230,0.1);
+      border-color: rgba(142,202,230,0.2);
+    }
+
+    .show-network.bet {
+      color: #f4c542;
+      background: rgba(244,197,66,0.1);
+      border-color: rgba(244,197,66,0.2);
+    }
+
+    .show-network.goodr {
+      color: #a8e6a3;
+      background: rgba(168,230,163,0.1);
+      border-color: rgba(168,230,163,0.2);
+    }
+
+    .show-role {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.35;
+    }
+
+    .show-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+    }
+
+    .show-desc {
+      font-size: 0.88rem;
+      opacity: 0.55;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .show-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .show-tag {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.45);
+      padding: 0.22rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    .networks-row {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 2.5rem;
+    }
+
+    .networks-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .badge {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 1.1rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .badge.featured-dark {
+      background: var(--accent);
+      color: var(--dark);
+      border: 1px solid var(--accent);
+    }
+
+    .badge.featured-dark:hover { background: var(--accent-light); border-color: var(--accent-light); }
+
+    .badge.dim {
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .badge.dim:hover { border-color: rgba(184,149,90,0.3); color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .work-section { padding: 5rem 1.5rem; }
+      .show-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 7rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-heading em { font-style: italic; color: var(--accent); }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      opacity: 0.7;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(0,0,0,0.15);
+      color: var(--ink);
+      opacity: 0.6;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .tag:hover { opacity: 1; border-color: var(--accent); color: var(--accent); }
+
+    /* ── PROJECTS ── */
+    .projects-section {
+      padding: 6rem 3rem;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5px;
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .project-card {
+      background: var(--dark);
+      padding: 2.5rem;
+      transition: background 0.25s;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .project-card:hover { background: #222220; }
+
+    .project-number {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-subtitle {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      opacity: 0.6;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-chip {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.55);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    .project-impact {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-light);
+      opacity: 0.7;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      padding: 5rem 3rem;
+      background: var(--off);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .skill-group h4 {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .skill-group ul { list-style: none; }
+
+    .skill-group li {
+      font-size: 0.88rem;
+      opacity: 0.65;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: opacity 0.2s, padding-left 0.2s;
+    }
+
+    .skill-group li:hover { opacity: 1; padding-left: 6px; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 7rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-sub {
+      font-size: 0.9rem;
+      opacity: 0.5;
+      margin-bottom: 2.5rem;
+      font-family: var(--mono);
+      letter-spacing: 0.06em;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.6;
+      font-size: 0.9rem;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover { opacity: 1; color: var(--accent); }
+
+    .contact-link-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(0,0,0,0.14);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover .contact-link-icon { border-color: var(--accent); background: var(--accent); color: white; }
+
+    /* Contact form */
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .form-input, .form-textarea {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      padding: 0.5rem 0;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--mid); font-style: italic; }
+    .form-textarea { resize: none; min-height: 100px; }
+
+    .form-submit {
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--white);
+      border: 1px solid var(--ink);
+      padding: 0.65rem 1.6rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .form-submit:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-success {
+      display: none;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      padding: 1rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      background: var(--dark);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    footer span {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      opacity: 0.3;
+    }
+
+    .footer-social { display: flex; gap: 1.5rem; }
+
+    .footer-social a {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      opacity: 0.3;
+      transition: opacity 0.2s;
+    }
+
+    .footer-social a:hover { opacity: 0.8; }
+
+    /* Back to top */
+    #back-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 40px; height: 40px;
+      background: var(--ink);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      opacity: 0.7;
+      transition: opacity 0.2s, background 0.2s;
+      z-index: 100;
+    }
+
+    #back-top.visible { display: flex; }
+    #back-top:hover { opacity: 1; background: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      nav.scrolled { padding: 0.8rem 1.5rem; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 0 1.5rem 3rem; }
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-meta { text-align: left; }
+      .hero-desc { margin-left: 0; }
+      .hero-actions { justify-content: flex-start; }
+      .about-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+      .reel-section, .credits-section, .projects-section, .skills-section { padding: 4rem 1.5rem; }
+      .stat-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Travis Singletary</h1>
-        <p>Digital Creator & Professional Editor</p>
-    </header>
-    <div class="container">
-        <section class="hero">
-            <video controls>
-                <source src="assets/videos/scene1_frustrated_confessional_v2_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
-        <section class="about">
-            <h2>About Me</h2>
-            <p>With 15+ years of experience in TV editing, I bring a unique blend of technical expertise and creative storytelling to every project. I specialize in crafting compelling narratives and high-energy s            <p>With 1ivate audiences.</p>
-        </section>
-        <section class="case-studies">
-            <h2>Case Studies</h2>
-            <p><strong>SteadyStreamTV:</strong> Revolutionizing IPTV experiences.</p>
-            <p><strong>Sky Sky Show:</str            <p><strong>Sith emotional intelligence.</p>
-            <p><strong>Content Automation:</strong> Streamlining content creation workflows.</p>
-            <p><strong>AI Video Gen:</strong> Pioneering the future of video production.</p>
-        </section>
-        <section class="network-credits">
-            <h2>Network Credits</h2>
-            <img src="assets/images/abc_logo.png" alt="ABC Logo">
-            <img src="assets/images/nbc_logo.png" alt="NBC Logo">
-        </section>
-        <section class="skills">
-            <h2>Skills</h2>
-            <p>Technical expertise in Adobe Premiere Pro, Final Cut Pro, DaVinci Resolve, and more.</p>
-        </section>
-        <section class="contact">
-            <h2>Contact</h2>
-            <p>Email: trav.singletary@gmail.com</p>
-            <p>Rate: Day rate available on request</p>
-        </section>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#reel" onclick="closeMenu()">Reel</a>
+    <a href="#credits" onclick="closeMenu()">Work</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">Travis Singletary</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#reel">Reel</a></li>
+        <li><a href="#credits">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <footer>
-        <p>&copy; 2026 Travis Singletary</p>
-    </footer>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg-text">Edit</div>
+    <div class="hero-content">
+      <div class="hero-title">
+        Senior video editor.<br>
+        <em>Broadcast storytelling.</em><br>
+        Built for the long-form.
+      </div>
+      <div class="hero-meta">
+        <p class="hero-tagline">Los Angeles · Remote · Available Now</p>
+        <p class="hero-desc">
+          15+ years cutting network television, streaming, and branded content. Documentary, unscripted, and narrative work — story-first pacing and broadcast-level finishing.
+        </p>
+        <div class="hero-actions">
+          <a href="#reel" class="btn btn-primary">Watch the Reel</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#reel" aria-label="Scroll to demo reel">
+      <span>Watch Reel</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ── DEMO REEL ── -->
+  <section class="reel-section" id="reel">
+    <p class="section-label" style="color:rgba(255,255,255,0.4)">Demo Reel</p>
+    <div class="reel-wrapper reveal">
+      <iframe
+        src="https://player.vimeo.com/video/512797685?autoplay=0&title=0&byline=0&portrait=0&color=b8955a"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Travis Singletary — Demo Reel"
+      ></iframe>
+    </div>
+    <div class="reel-caption reveal">
+      <span>Selected work — 2010–2025</span>
+      <span>TV · Streaming · Branded · Documentary</span>
+    </div>
+  </section>
+
+  <!-- ── SELECTED WORK ── -->
+  <section class="work-section" id="credits">
+    <div class="work-inner">
+      <p class="section-label" style="color:rgba(255,255,255,0.4)">Selected Work</p>
+      <h2 class="work-heading reveal">Shows I've cut.</h2>
+
+      <!-- Show grid -->
+      <div class="show-grid">
+
+        <!-- Triggered -->
+        <div class="show-card reveal">
+          <div class="show-video-wrap">
+            <iframe
+              src="https://player.vimeo.com/video/512797685?autoplay=0&title=0&byline=0&portrait=0&color=b8955a"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              title="Triggered — Sizzle Reel"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="show-meta">
+            <div class="show-top">
+              <span class="show-network">Sizzle Reel</span>
+              <span class="show-role">Editor</span>
+            </div>
+            <h3 class="show-title">Triggered</h3>
+            <p class="show-desc">High-energy sizzle reel built to pitch and sell. Tight cuts, emotional pull, and pacing that commands attention from the first frame.</p>
+            <div class="show-tags">
+              <span class="show-tag">Sizzle</span>
+              <span class="show-tag">Unscripted</span>
+              <span class="show-tag">Editor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iyanla: Fix My Life — OWN -->
+        <div class="show-card reveal">
+          <div class="show-video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/n4t7RLZF2dM?rel=0&modestbranding=1&color=white"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Iyanla: Fix My Life — OWN"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="show-meta">
+            <div class="show-top">
+              <span class="show-network own">OWN</span>
+              <span class="show-role">Editor</span>
+            </div>
+            <h3 class="show-title">Iyanla: Fix My Life</h3>
+            <p class="show-desc">Long-form unscripted for Oprah Winfrey Network. Crafting emotionally resonant scenes from raw interview and verite footage — precision pacing for maximum impact.</p>
+            <div class="show-tags">
+              <span class="show-tag">Unscripted</span>
+              <span class="show-tag">Long-Form</span>
+              <span class="show-tag">Network TV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bet on Black — BET -->
+        <div class="show-card reveal">
+          <div class="show-video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/GGi14HkBPrQ?rel=0&modestbranding=1&color=white"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Bet on Black — BET"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="show-meta">
+            <div class="show-top">
+              <span class="show-network bet">BET</span>
+              <span class="show-role">Editor</span>
+            </div>
+            <h3 class="show-title">Bet on Black</h3>
+            <p class="show-desc">Young, Gifted and Black — Episode 1. Narrative-driven documentary series celebrating Black excellence and entrepreneurship. Long-form storytelling built for impact on one of cable's most iconic networks.</p>
+            <div class="show-tags">
+              <span class="show-tag">Documentary</span>
+              <span class="show-tag">Long-Form</span>
+              <span class="show-tag">Network TV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Goodr — Branded Content -->
+        <div class="show-card reveal">
+          <div class="show-video-wrap">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111;gap:0.75rem;">
+              <span style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(168,230,163,0.5)">Goodr · The Circling</span>
+              <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2)">Upload to Vimeo/YouTube to embed</span>
+            </div>
+          </div>
+          <div class="show-meta">
+            <div class="show-top">
+              <span class="show-network goodr">Goodr</span>
+              <span class="show-role">Editor</span>
+            </div>
+            <h3 class="show-title">The Circling</h3>
+            <p class="show-desc">60-second branded spot for Goodr — tight pacing, high energy, and a distinct visual rhythm that matches the brand's personality. Built to stop the scroll.</p>
+            <div class="show-tags">
+              <span class="show-tag">Branded Content</span>
+              <span class="show-tag">:60 Spot</span>
+              <span class="show-tag">Editor</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /show-grid -->
+
+      <!-- Network credits row -->
+      <div class="networks-row reveal">
+        <p class="networks-label">Also worked with</p>
+        <div class="badge-grid">
+          <div class="badge featured-dark">A&amp;E</div>
+          <div class="badge featured-dark">Goodr</div>
+          <div class="badge dim">TV One</div>
+          <div class="badge dim">Revolt TV</div>
+          <div class="badge dim">Discovery+</div>
+          <div class="badge dim">Unscripted</div>
+          <div class="badge dim">Documentary</div>
+          <div class="badge dim">Branded</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="about-section">
+      <div>
+        <p class="section-label">About</p>
+        <h2 class="about-heading reveal">
+          The edit is where<br>
+          stories <em>become</em><br>
+          what they were<br>
+          meant to be.
+        </h2>
+        <div class="stat-row reveal">
+          <div>
+            <div class="stat-number" data-target="15">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat-number" data-target="6">0</div>
+            <div class="stat-label">Major Networks</div>
+          </div>
+          <div>
+            <div class="stat-number" data-target="100" data-suffix="+">0</div>
+            <div class="stat-label">Hours Aired</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <p>
+          I'm a senior video editor with 15+ years in television and streaming, cutting documentary, unscripted, and branded content for major networks including A&amp;E, OWN, BET, and Discovery.
+        </p>
+        <p>
+          I shape raw footage into clear, compelling stories — building structure, tightening pacing, and landing emotion from assembly to final delivery. My edits move with intention: every cut earns its place.
+        </p>
+        <p>
+          Beyond the timeline, I've built my own distribution infrastructure, automated post-delivery pipelines, and integrated AI into production workflows — not to replace craft, but to protect the time that belongs to it.
+        </p>
+        <p style="opacity:0.45; font-size:0.85rem;">
+          Based in Los Angeles · Available immediately for remote engagements — long-form, series, specials, and branded campaigns.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Narrative</span>
+          <span class="tag">Documentary</span>
+          <span class="tag">Unscripted</span>
+          <span class="tag">Color Grading</span>
+          <span class="tag">Sound Design</span>
+          <span class="tag">AI Workflows</span>
+          <span class="tag">Pipeline Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects-section" id="projects">
+    <p class="section-label" style="color:rgba(255,255,255,0.4)">Beyond the Edit</p>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-number">01</div>
+        <div class="project-title">SteadyStreamTV</div>
+        <div class="project-subtitle">Built a distribution channel when the existing ones failed me.</div>
+        <p class="project-desc">Multi-region IPTV platform architected from the ground up. Full control over encoding, quality, and delivery — no third-party compression surprises, no middlemen.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Node.js</span>
+          <span class="tech-chip">React</span>
+          <span class="tech-chip">FFmpeg</span>
+          <span class="tech-chip">AWS</span>
+          <span class="tech-chip">Docker</span>
+        </div>
+        <div class="project-impact">10K+ viewers · 99.9% uptime · 40% faster delivery</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-number">02</div>
+        <div class="project-title">Sky Sky Show</div>
+        <div class="project-subtitle">Ran a full children's series with no production team.</div>
+        <p class="project-desc">Writer, director, editor, and distributor — solo. Built an automated production pipeline for episode generation, AI voice-over, and multi-platform publishing.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">FFmpeg</span>
+          <span class="tech-chip">Suno AI</span>
+          <span class="tech-chip">DALL-E</span>
+          <span class="tech-chip">Supabase</span>
+        </div>
+        <div class="project-impact">100+ episodes · 50K+ views · Solo at series scale</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-number">03</div>
+        <div class="project-title">Content Delivery Pipeline</div>
+        <div class="project-subtitle">Automated the repetitive so the creative could breathe.</div>
+        <p class="project-desc">7-agent automation system: format conversion, captions, metadata, scheduling, and delivery across 8 platforms — all triggered after picture lock.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">LangChain</span>
+          <span class="tech-chip">OpenAI</span>
+          <span class="tech-chip">n8n</span>
+          <span class="tech-chip">Supabase</span>
+        </div>
+        <div class="project-impact">100+ pieces/month · 8 platforms · 300% output increase</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-number">04</div>
+        <div class="project-title">AI Visual Pipeline</div>
+        <div class="project-subtitle">Built a bespoke visual library that generates to spec.</div>
+        <p class="project-desc">Text-brief to production-ready asset: DALL-E, Runway, and LumaAI integrated with FFmpeg post-processing. Describe the shot — it exists.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">DALL-E</span>
+          <span class="tech-chip">Runway</span>
+          <span class="tech-chip">LumaAI</span>
+          <span class="tech-chip">FFmpeg</span>
+        </div>
+        <div class="project-impact">50+ assets/month · 10x faster than stock search</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills-section" id="skills">
+    <p class="section-label">Tools &amp; Platforms</p>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h4>Editing</h4>
+        <ul>
+          <li>Avid Media Composer</li>
+          <li>Adobe Premiere Pro</li>
+          <li>DaVinci Resolve</li>
+          <li>Final Cut Pro</li>
+          <li>Multi-cam Workflow</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h4>Post-Production</h4>
+        <ul>
+          <li>After Effects</li>
+          <li>Color Grading</li>
+          <li>Sound Design</li>
+          <li>Motion Graphics</li>
+          <li>VFX Compositing</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h4>AI &amp; Automation</h4>
+        <ul>
+          <li>Text-to-Video Generation</li>
+          <li>AI Voice Synthesis</li>
+          <li>Automated Captioning</li>
+          <li>LLM Script Assistance</li>
+          <li>FFmpeg Pipelines</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h4>Delivery &amp; Distribution</h4>
+        <ul>
+          <li>Broadcast Standards</li>
+          <li>IPTV / HLS / DASH</li>
+          <li>Multi-platform Publishing</li>
+          <li>Frame.io / LucidLink</li>
+          <li>Remote Workflow</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="contact-section">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 class="contact-heading reveal">Let's make<br>something real.</h2>
+        <p class="contact-sub reveal">Available for remote freelance and contract engagements.</p>
+        <div class="contact-links reveal">
+          <a href="mailto:travis@skyrasmedia.com" class="contact-link">
+            <div class="contact-link-icon">✉</div>
+            travis@skyrasmedia.com
+          </a>
+          <a href="https://skyrasmedia.com" target="_blank" rel="noreferrer" class="contact-link">
+            <div class="contact-link-icon">↗</div>
+            skyrasmedia.com
+          </a>
+          <a href="https://www.linkedin.com/in/travissingletary" target="_blank" rel="noreferrer" class="contact-link">
+            <div class="contact-link-icon">in</div>
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/travissingletary" target="_blank" rel="noreferrer" class="contact-link">
+            <div class="contact-link-icon">ig</div>
+            @travissingletary
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="section-label">Send a Message</p>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@studio.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="formBtn">Send Message</button>
+          <div class="form-success" id="formSuccess">✓ Message sent — I'll be in touch soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© 2026 Travis Singletary — Senior Video Editor</span>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/travissingletary" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/travissingletary" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="mailto:travis@skyrasmedia.com">Email</a>
+    </div>
+    <span>Remote · Available Now</span>
+  </footer>
+
+  <button id="back-top" aria-label="Back to top">↑</button>
+
+  <script>
+    /* ── Nav scroll behaviour ── */
+    const nav = document.getElementById('mainNav');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id], .reel-section[id]');
+
+    function onScroll() {
+      const y = window.scrollY;
+
+      // Scrolled class
+      nav.classList.toggle('scrolled', y > 60);
+
+      // Back to top
+      const btn = document.getElementById('back-top');
+      btn.classList.toggle('visible', y > 600);
+
+      // Active nav link
+      let current = '';
+      document.querySelectorAll('[id]').forEach(el => {
+        if (el.getBoundingClientRect().top <= 130) current = el.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ── Back to top ── */
+    document.getElementById('back-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Mobile menu ── */
+    const toggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    toggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ── Scroll reveal ── */
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 90);
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ── Animated stat counters ── */
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '+';
+        const duration = 1600;
+        const step = target / (duration / 16);
+        let cur = 0;
+        const timer = setInterval(() => {
+          cur += step;
+          if (cur >= target) {
+            el.textContent = target + suffix;
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(cur);
+          }
+        }, 16);
+        statObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-target]').forEach(el => statObs.observe(el));
+
+    /* ── Contact form ── */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('formBtn');
+      const success = document.getElementById('formSuccess');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      // Simulate async submit — replace with your actual endpoint
+      setTimeout(() => {
+        this.reset();
+        btn.style.display = 'none';
+        success.style.display = 'block';
+      }, 1200);
+    });
+  </script>
+
 </body>
 </html>
