@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const portfolioDesignSpec = {
+  aesthetic: "High-end 'Los Angeles Digital Creator', sleek, dark mode",
+  typography: {
+    primary_font: "Montserrat",
+    secondary_font: "Open Sans",
+    headings: "Bold, modern, sans-serif",
+    body: "Clean, readable, sans-serif"
+  },
+  color_palette: {
+    primary: "#1A1A1A",
+    secondary: "#00C4FF",
+    accent: "#FFD700",
+    text_light: "#E0E0E0",
+    text_dark: "#333333"
+  },
+  layout: "Minimalist, spacious, responsive",
+  animations: "Subtle, smooth transitions, hover effects"
+};
+
+const contentSections = [
+  {
+    name: "Featured Work",
+    description: "High-energy sizzles, showcasing technical mastery and dynamic editing.",
+    video_sources: ["Vimeo", "YouTube"],
+    examples: ["Syracuse 8 Reel", "Latest Sizzle Reel"]
+  },
+  {
+    name: "Narrative/Doc",
+    description: "Deep-dive storytelling, long-form content, documentary work.",
+    video_sources: ["Vimeo", "YouTube"],
+    examples: ["Documentary Excerpt", "Narrati    examples: ["Documentary Excerpt",ocial/Short-Form",
+    description: "High-engagement reels, optimized for social platforms.",
+    video_sources: ["Instagram Reels", "Facebook Reels"],
+    examples: ["Instagram Reel 1", "Facebook Reel 2"]
+  }
+];
+
+const integrations = {
+  business_hub: "skyrasmedia.com",
+  video_platforms: ["Vimeo", "YouTube"],
+  social_platforms: ["Instagram", "Facebook", "LinkedIn"]
+};
+
+const voiceRules = {
+  captions: "Authentic, engaging, professional yet approachable, highlights technical skill and creative vision, community-focused, emphasizes growth and collaboration.",
+  site_copy: "Sleek, confident, results-oriented, showcases expertise, emphasizes impact and storytelling, modern and forward-thinking."
+};
+---
+
+<Layout title="Travis Singletary - Digital Creator & Editor">
+  <main class="min-h-screen flex flex-col items-center justify-center p-8">
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-serif font-bold text-textLight mb-4">Travis Singletary</h1>
+      <h2 class="text-2xl font-sans text-secondary mb-8">Digital Creator & Professional Editor</h2>
+      <p class="text-lg text-textLight max-w-2xl mx-auto">{voiceRules.site_copy}</p>
+    </section>
+
+    <section id="featured-work" class="w-full max-w-6xl mb-16">
+      <h3 class="text-4xl font-serif font-bold text-accent mb-8">Featured Work</h3>
+      <p class="text-textLight mb-4">{contentSections[0].description}</p>
+      <!-- Placeholder for video embeds -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Syracuse 8 Reel</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Video Embed Placeholder</div>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Latest Sizzle Reel</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Video Embed Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="narrative-doc" class="w-full max-w-6xl mb-16">
+      <h3 class="text-4xl font-serif font-bold text-accent mb-8">Narrative/Documentary</h3>
+      <p class="text-textLight mb-4">{contentSections[1].description}</p>
+      <!-- Placeholder for video embeds -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Documentary Excerpt</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Video Embed Placeholder</div>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Narrative Short Film</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Video Embed Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social-short-form" class="w-full max-w-6xl mb-16">
+      <h3 class="text-4xl font-serif font-bold text-accent mb-8">Social/Short-Form</h3>
+      <p class="text-textLight mb-4">{contentSections[2].description}</p>
+      <!-- Placeholder for social media embeds/links -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Instagram Reel 1</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Instagram Embed Placeholder</div>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+          <h4 class="text-xl font-serif text-textLight mb-2">Facebook Reel 2</h4>
+          <div class="aspect-video bg-gray-700 flex items-center justify-center text-gray-400">Facebook Embed Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="w-full max-w-6xl text-center">
+      <h3 class="text-4xl font-serif font-bold text-accent mb-8">Connect</h3>
+      <p class="text-textLight mb-4">Visit my business hub: <a href="https://skyrasmedia.com" target="_blank" class="text-secondary hover:underline">skyrasmedia.com</a></p>
+      <div class="flex justify-center space-x-4">
+        <a href="https://instagram.com/travissingletary" target="_blank" class="text-textLight hover:text-secondary">Instagram</a>
+        <a href="https://facebook.com/TravisSingletary" target="_blank" class="text-textLight hover:text-secondary">Facebook</a>
+        <a href="https://linkedin.com/in/travissingletary" target="_blank" class="text-textLight hover:text-secondary">LinkedIn</a>
+        <!-- Add Vimeo/YouTube links as needed -->
+      </div>
+    </section>
+  </main>
+</Layout>
