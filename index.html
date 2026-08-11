@@ -370,11 +370,13 @@
       position: relative;
     }
 
-    .reel-wrapper iframe {
+    .reel-wrapper iframe,
+    .reel-wrapper video {
       width: 100%;
       aspect-ratio: 16/9;
       display: block;
       border: none;
+      background: #000;
     }
 
     .reel-caption {
@@ -439,13 +441,16 @@
       background: #111;
     }
 
-    .show-video-wrap iframe {
+    .show-video-wrap iframe,
+    .show-video-wrap video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: none;
       display: block;
+      background: #000;
+      object-fit: cover;
     }
 
     .show-meta {
@@ -487,6 +492,33 @@
       color: #a8e6a3;
       background: rgba(168,230,163,0.1);
       border-color: rgba(168,230,163,0.2);
+    }
+
+    .show-network.skyras {
+      color: #d4af37;
+      background: rgba(212,175,55,0.12);
+      border-color: rgba(212,175,55,0.28);
+    }
+
+    .show-thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .show-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 45%, transparent 70%);
+      pointer-events: none;
     }
 
     .show-role {
@@ -1047,12 +1079,15 @@
   <section class="reel-section" id="reel">
     <p class="section-label" style="color:rgba(255,255,255,0.4)">Demo Reel</p>
     <div class="reel-wrapper reveal">
-      <iframe
-        src="https://player.vimeo.com/video/512797685?autoplay=0&title=0&byline=0&portrait=0&color=b8955a"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        title="Travis Singletary — Demo Reel"
-      ></iframe>
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/images/travis-credit-reel-poster.jpg"
+        title="Travis Singletary — Credit Reel"
+      >
+        <source src="assets/video/travis-credit-reel.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="reel-caption reveal">
       <span>Selected work — 2010–2025</span>
@@ -1072,13 +1107,15 @@
         <!-- Triggered -->
         <div class="show-card reveal">
           <div class="show-video-wrap">
-            <iframe
-              src="https://player.vimeo.com/video/512797685?autoplay=0&title=0&byline=0&portrait=0&color=b8955a"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/images/triggered-sizzle-poster.jpg"
               title="Triggered — Sizzle Reel"
-              loading="lazy"
-            ></iframe>
+            >
+              <source src="assets/video/triggered-sizzle-hero.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="show-meta">
             <div class="show-top">
@@ -1147,13 +1184,48 @@
           </div>
         </div>
 
+        <!-- Gold Blooded Ep01 — SkyRas -->
+        <div class="show-card reveal">
+          <div class="show-video-wrap">
+            <!-- Embed Vimeo when uploaded: replace thumb block with player.vimeo.com/video/{ID} iframe -->
+            <img
+              class="show-thumb"
+              src="/assets/images/gb_ep01_thumb.jpg"
+              alt="Gold Blooded Ep01 — The Melon Man Cometh"
+              loading="lazy"
+            />
+            <div class="show-thumb-overlay">
+              <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(212,175,55,0.85)">Ep01 · Pending Vimeo embed</span>
+            </div>
+          </div>
+          <div class="show-meta">
+            <div class="show-top">
+              <span class="show-network skyras">SkyRas</span>
+              <span class="show-role">Creator/Editor</span>
+            </div>
+            <h3 class="show-title">Gold Blooded</h3>
+            <p class="show-desc">Ep01 — &ldquo;The Melon Man Cometh.&rdquo; SkyRas Originals comedy short: period vibe, character-first pacing, and a clean picture lock from concept through final.</p>
+            <div class="show-tags">
+              <span class="show-tag">Comedy</span>
+              <span class="show-tag">Short Form</span>
+              <span class="show-tag">Creator/Editor</span>
+              <span class="show-tag">SkyRas</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Goodr — Branded Content -->
         <div class="show-card reveal">
           <div class="show-video-wrap">
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111;gap:0.75rem;">
-              <span style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(168,230,163,0.5)">Goodr · The Circling</span>
-              <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2)">Upload to Vimeo/YouTube to embed</span>
-            </div>
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/images/goodr-circling-poster.jpg"
+              title="Goodr — The Circling"
+            >
+              <source src="assets/video/goodr-circling.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="show-meta">
             <div class="show-top">
